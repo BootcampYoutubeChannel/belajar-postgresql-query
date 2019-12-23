@@ -1,5 +1,5 @@
 select 
-    department_id kode_divisi,
-    department_name as nama_divisi,
-    manager_id as "Kode Manager"
-from departments;
+    div.department_id kode_divisi,
+    div.department_name as nama_divisi,
+    div.manager_id as "Kode Manager"
+from departments div;
