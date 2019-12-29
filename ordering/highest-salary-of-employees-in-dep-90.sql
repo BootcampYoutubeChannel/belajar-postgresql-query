@@ -4,4 +4,5 @@ select
     salary as gaji,
     department_id as kode_divisi
 from employees
-order by department_id, salary desc;
+where department_id = 90
+order by salary desc;
