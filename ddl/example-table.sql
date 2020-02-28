@@ -49,7 +49,6 @@ ADD CONSTRAINT uq_kelas UNIQUE (kelas_nama, kelas_angkatan);
 insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values ('k1', 'Kelas 1', 2011);
 insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values ('k2', 'Kelas 2', 2011);
 insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values ('k3', 'Kelas 2', 2012);
-insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values ('k4', 'Kelas 1', 2011);
 
 -- # error primary key contraint
 -- insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values ('k1', 'Kelas 3', 2013);
