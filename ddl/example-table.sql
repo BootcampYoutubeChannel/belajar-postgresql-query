@@ -31,6 +31,9 @@ create table example.table_relation (
 insert into example.table_relation (kelas_id, kelas_nama) values ('k1', 'Kelas 1');
 insert into example.table_relation (kelas_id, kelas_nama) values ('k2', 'Kelas 1');
 
+-- need to drop table example.table_relation;
+drop table example.table_relation;
+
 create table example.table_relation (
     kelas_id character varying(60) primary key,
     kelas_nama character varying(100),
