@@ -60,3 +60,7 @@ insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values
 insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values ('k3', 'Kelas 2', 2012);
 insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values ('k4', 'Kelas 1', 2011);
 
+-- # error primary key contraint
+-- insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values ('k1', 'Kelas 3', 2013);
+-- insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values (null, 'Kelas 3', 2013);
+
