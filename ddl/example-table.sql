@@ -8,8 +8,16 @@ CREATE TABLE example.example_table (
     created_datetime timestamp not null default now()
 );
 
+-- # error insert because null contarint
+-- insert into example.example_table (nama_depan, nama_belang, tanggal_lahir, saldo, aktif)
+-- values (null, 'Maryanto', '1991-01-01', 1000000, true);
+
+-- # error insert because null contarint
+-- insert into example.example_table ( nama_belang, tanggal_lahir, saldo, aktif)
+-- values ('Maryanto', '1991-01-01', 1000000, true);
+
 insert into example.example_table (nama_depan, nama_belang, tanggal_lahir, saldo, aktif)
-values ('Dimas', 'Maryanto', '1991-01-01', 1000000, true);
+values ('', 'Maryanto', '1991-01-01', 1000000, true);
 
 select * from example.example_table;
 
