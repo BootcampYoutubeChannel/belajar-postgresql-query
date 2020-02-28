@@ -12,6 +12,19 @@ ALTER TABLE example.example_table
 ADD CONSTRAINT saldo_lebih_besar_0 
 CHECK (saldo >= 0);
 
+ALTER TABLE example.example_table ADD COLUMN kelas_id character varying(60);
+
+ALTER TABLE example.example_table
+ADD CONSTRAINT fk_kelas_id FOREIGN KEY (kelas_id)
+REFERENCES example.table_relation(kelas_id) ON UPDATE CASCADE ON DELETE CASCADE;
+
+insert into example.example_table (nama_depan, nama_belang, tanggal_lahir, saldo, aktif, kelas_id)
+values ('error saldo minus', 'Maryanto', '1991-01-01', 0, true, 'k1');
+
+insert into example.example_table (nama_depan, nama_belang, tanggal_lahir, saldo, aktif, kelas_id)
+values ('error saldo minus', 'Maryanto', '1991-01-01', 0, true, 'k5');
+
+delete from example.table_relation where kelas_id = 'k1';
 
 -- # error insert because null contarint
 -- insert into example.example_table (nama_depan, nama_belang, tanggal_lahir, saldo, aktif)
