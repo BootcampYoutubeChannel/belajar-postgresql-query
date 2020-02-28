@@ -13,7 +13,6 @@ ADD CONSTRAINT saldo_lebih_besar_0
 CHECK (saldo >= 0);
 
 
-
 -- # error insert because null contarint
 -- insert into example.example_table (nama_depan, nama_belang, tanggal_lahir, saldo, aktif)
 -- values (null, 'Maryanto', '1991-01-01', 1000000, true);
