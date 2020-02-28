@@ -8,6 +8,12 @@ CREATE TABLE example.example_table (
     created_datetime timestamp not null default now()
 );
 
+ALTER TABLE example.example_table
+ADD CONSTRAINT saldo_lebih_besar_0 
+CHECK (saldo >= 0);
+
+
+
 -- # error insert because null contarint
 -- insert into example.example_table (nama_depan, nama_belang, tanggal_lahir, saldo, aktif)
 -- values (null, 'Maryanto', '1991-01-01', 1000000, true);
@@ -15,6 +21,13 @@ CREATE TABLE example.example_table (
 -- # error insert because null contarint
 -- insert into example.example_table ( nama_belang, tanggal_lahir, saldo, aktif)
 -- values ('Maryanto', '1991-01-01', 1000000, true);
+
+-- # error insert because contraint check
+-- insert into example.example_table (nama_depan, nama_belang, tanggal_lahir, saldo, aktif)
+-- values ('error saldo minus', 'Maryanto', '1991-01-01', -1000, true);
+
+insert into example.example_table (nama_depan, nama_belang, tanggal_lahir, saldo, aktif)
+values ('error saldo minus', 'Maryanto', '1991-01-01', 0, true);
 
 insert into example.example_table (nama_depan, nama_belang, tanggal_lahir, saldo, aktif)
 values ('', 'Maryanto', '1991-01-01', 1000000, true);
@@ -47,3 +60,4 @@ insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values
 insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values ('k2', 'Kelas 2', 2011);
 insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values ('k3', 'Kelas 2', 2012);
 insert into example.table_relation (kelas_id, kelas_nama, kelas_angkatan) values ('k4', 'Kelas 1', 2011);
+
